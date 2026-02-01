@@ -1,0 +1,40 @@
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Passionate UI/UX Design Intern</h3>
+        <p>
+          I'm a dedicated design intern with a passion for creating user-centered digital experiences. 
+          My journey in UI/UX design began with a curiosity about how design can solve real-world problems 
+          and improve people's daily interactions with technology.
+        </p>
+        <p>
+          I believe great design is invisible – it should feel natural and intuitive. I'm always eager to 
+          learn new design methodologies, explore emerging trends, and collaborate with teams to bring 
+          innovative ideas to life.
+        </p>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <h4>🎨 Creative Problem Solving</h4>
+            <p>I love tackling complex design challenges with innovative solutions</p>
+          </div>
+          <div class="highlight-item">
+            <h4>👥 User-Centered Approach</h4>
+            <p>Every design decision is made with the user's needs and experience in mind</p>
+          </div>
+          <div class="highlight-item">
+            <h4>📚 Continuous Learning</h4>
+            <p>Always exploring new tools, techniques, and design philosophies</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-item" *ngFor="let stat of stats">
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

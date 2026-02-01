@@ -1,0 +1,37 @@
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Hello, I'm <span class="highlight">Your Name</span>
+        </h1>
+        <h2 class="hero-subtitle">UI/UX Designer & Creative Problem Solver</h2>
+        <p class="hero-description">
+          I'm a passionate UI/UX design intern dedicated to creating intuitive and beautiful digital experiences. 
+          I love turning complex problems into simple, elegant design solutions.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" (click)="scrollToSection('projects')">
+            View My Work
+          </button>
+          <button class="btn btn-outline" (click)="scrollToSection('contact')">
+            Get In Touch
+          </button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="image-placeholder">
+          <div class="placeholder-content">
+            <p>Add Your Photo Here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-indicator" (click)="scrollToSection('about')">
+      <span>Scroll Down</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </div>
+</section>

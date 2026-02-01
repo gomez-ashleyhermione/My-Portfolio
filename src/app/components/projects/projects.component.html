@@ -1,0 +1,49 @@
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title">My Projects</h2>
+    
+    <!-- Category Filter -->
+    <div class="filter-tabs">
+      <button 
+        *ngFor="let category of categories"
+        [class.active]="selectedCategory === category"
+        (click)="selectCategory(category)"
+        class="filter-btn"
+      >
+        {{ category }}
+      </button>
+    </div>
+    
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of filteredProjects">
+        <div class="project-image">
+          <div class="image-placeholder">
+            <span>{{ project.title }}</span>
+            <p>Add Project Screenshot</p>
+          </div>
+          <div class="project-overlay">
+            <a href="{{ project.link }}" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
+        
+        <div class="project-info">
+          <div class="project-category">{{ project.category }}</div>
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          
+          <div class="project-tools">
+            <span class="tool-tag" *ngFor="let tool of project.tools">{{ tool }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Call to Action -->
+    <div class="projects-cta">
+      <h3>Interested in seeing more?</h3>
+      <p>I'm always working on new projects and learning new skills.</p>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+  </div>
+</section>

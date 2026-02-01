@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <h2>Your Name</h2>
+        <span class="tagline">UI/UX Designer</span>
+      </div>
+      
+      <div class="navbar-menu" [class.is-active]="isMenuOpen">
+        <a href="#" (click)="scrollToSection('home')" class="nav-link">Home</a>
+        <a href="#" (click)="scrollToSection('about')" class="nav-link">About</a>
+        <a href="#" (click)="scrollToSection('skills')" class="nav-link">Skills</a>
+        <a href="#" (click)="scrollToSection('projects')" class="nav-link">Projects</a>
+        <a href="#" (click)="scrollToSection('contact')" class="nav-link">Contact</a>
+      </div>
+      
+      <button class="mobile-menu-toggle" (click)="toggleMenu()" [class.is-active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>

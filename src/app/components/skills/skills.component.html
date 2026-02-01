@@ -1,0 +1,48 @@
+<section id="skills" class="section">
+  <div class="container">
+    <h2 class="section-title">My Skills</h2>
+    
+    <div class="skills-grid">
+      <!-- Design Tools -->
+      <div class="skill-category">
+        <h3>Design Tools</h3>
+        <div class="tools-grid">
+          <div class="tool-item" *ngFor="let tool of designTools">
+            <div class="tool-icon">{{ tool.icon }}</div>
+            <div class="tool-info">
+              <h4>{{ tool.name }}</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" [style.width.%]="tool.level"></div>
+              </div>
+              <span class="skill-percentage">{{ tool.level }}%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Core Skills -->
+      <div class="skill-category">
+        <h3>Core Skills</h3>
+        <div class="skills-list">
+          <div class="skill-item" *ngFor="let skill of skills">
+            <div class="skill-info">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-percentage">{{ skill.level }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Additional Skills -->
+      <div class="skill-category">
+        <h3>Additional Skills</h3>
+        <div class="tags-container">
+          <span class="skill-tag" *ngFor="let skill of otherSkills">{{ skill }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
