@@ -1,37 +1,51 @@
 <section id="home" class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="hero-title">
-          Hello, I'm <span class="highlight">Your Name</span>
-        </h1>
-        <h2 class="hero-subtitle">UI/UX Designer & Creative Problem Solver</h2>
-        <p class="hero-description">
-          I'm a passionate UI/UX design intern dedicated to creating intuitive and beautiful digital experiences. 
-          I love turning complex problems into simple, elegant design solutions.
-        </p>
-        <div class="hero-buttons">
-          <button class="btn btn-primary" (click)="scrollToSection('projects')">
-            View My Work
-          </button>
-          <button class="btn btn-outline" (click)="scrollToSection('contact')">
-            Get In Touch
-          </button>
-        </div>
-      </div>
-      <div class="hero-image">
-        <div class="image-placeholder">
-          <div class="placeholder-content">
-            <p>Add Your Photo Here</p>
-          </div>
-        </div>
-      </div>
+  <div class="hero-background">
+    <div class="grid-pattern"></div>
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-indicator" (click)="scrollToSection('about')">
-      <span>Scroll Down</span>
-      <div class="scroll-arrow"></div>
+  
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge reveal-scale">
+        <span class="badge-dot"></span>
+        <span>Available for Internship</span>
+      </div>
+      
+      <h1 class="hero-name">
+        <span class="name-line reveal-left">Ashley Hermione</span>
+        <span class="name-line accent reveal-right">Gomez</span>
+      </h1>
+      
+      <p class="hero-role reveal">
+        <span class="typing-text">{{ displayedRole }}</span>
+        <span class="cursor-blink" *ngIf="isTyping">|</span>
+      </p>
+      
+      <p class="hero-description reveal">
+        3rd year IT student at Polytechnic University of the Philippines - Taguig Campus. 
+        Passionate about creating intuitive digital experiences through thoughtful design and clean code.
+      </p>
+      
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn--primary">
+          <span>View My Work</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn--outline">
+          <span>Get In Touch</span>
+        </a>
+      </div>
+      
+      <div class="hero-scroll reveal">
+        <span>Scroll to explore</span>
+        <div class="scroll-line"></div>
+      </div>
     </div>
   </div>
 </section>
