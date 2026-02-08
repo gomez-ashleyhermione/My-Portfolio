@@ -11,6 +11,22 @@
 				"$tsc"
 			],
 			"group": "build"
+		},
+		{
+			"label": "Check Node.js Installation",
+			"type": "shell",
+			"command": "node --version",
+			"args": [],
+			"isBackground": false,
+			"group": "build"
+		},
+		{
+			"label": "Install Angular CLI",
+			"type": "shell",
+			"command": "npm install -g @angular/cli",
+			"args": [],
+			"isBackground": false,
+			"group": "build"
 		}
 	]
 }
