@@ -10,37 +10,46 @@
   
   <div class="container">
     <div class="hero-content">
-      <h1 class="hero-name">
-        <span class="name-line reveal-left">Ashley Hermione</span>
-        <span class="name-line accent reveal-right">Gomez</span>
-      </h1>
-      
-      <p class="hero-role reveal">
-        <span class="typing-text">{{ displayedRole }}</span>
-        <span class="cursor-blink" *ngIf="isTyping">|</span>
-      </p>
-      
-      <p class="hero-description reveal">
-        Diploma in Information Technology student at Polytechnic University of the Philippines - Taguig Campus. 
-        Passionate about creating intuitive digital experiences through thoughtful design and clean code.
-      </p>
-      
-      <div class="hero-actions reveal">
-        <a href="#projects" class="btn btn--primary">
-          <span>View My Work</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-        <a href="#contact" class="btn btn--outline">
-          <span>Get In Touch</span>
-        </a>
+      <div class="hero-text">
+        <h1 class="hero-name">
+          <span class="name-line reveal-left">Ashley Hermione</span>
+          <span class="name-line accent reveal-right">Gomez</span>
+        </h1>
+        
+        <p class="hero-role reveal">
+          <span class="typing-text">{{ displayedRole }}</span>
+          <span class="cursor-blink" *ngIf="isTyping">|</span>
+        </p>
+        
+        <p class="hero-description reveal">
+          Diploma in Information Technology student at Polytechnic University of the Philippines - Taguig Campus. 
+          Passionate about creating intuitive digital experiences through thoughtful design and clean code.
+        </p>
+        
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn btn--primary">
+            <span>View My Work</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn--outline">
+            <span>Get In Touch</span>
+          </a>
+        </div>
       </div>
       
-      <div class="hero-scroll reveal">
-        <span>Scroll to explore</span>
-        <div class="scroll-line"></div>
+      <div class="hero-profile reveal-scale">
+        <div class="profile-image-wrapper">
+          <img src="assets/formal-picture.jfif" alt="Ashley Hermione Gomez" class="profile-image">
+          <div class="profile-border"></div>
+        </div>
       </div>
+    </div>
+    
+    <div class="hero-scroll reveal">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"></div>
     </div>
   </div>
 </section>
