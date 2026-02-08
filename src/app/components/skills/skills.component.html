@@ -1,46 +1,31 @@
-<section id="skills" class="section">
+<section id="skills" class="section section--alt">
   <div class="container">
-    <h2 class="section-title">My Skills</h2>
+    <div class="section-header reveal">
+      <span class="section-label">Expertise</span>
+      <h2 class="section-title">Skills & Tools</h2>
+      <p class="section-subtitle">Technologies and tools I use to bring ideas to life</p>
+    </div>
     
     <div class="skills-grid">
-      <!-- Design Tools -->
-      <div class="skill-category">
-        <h3>Design Tools</h3>
-        <div class="tools-grid">
-          <div class="tool-item" *ngFor="let tool of designTools">
-            <div class="tool-icon">{{ tool.icon }}</div>
-            <div class="tool-info">
-              <h4>{{ tool.name }}</h4>
-              <div class="skill-bar">
-                <div class="skill-progress" [style.width.%]="tool.level"></div>
-              </div>
-              <span class="skill-percentage">{{ tool.level }}%</span>
-            </div>
-          </div>
+      <div class="skill-category reveal-scale" *ngFor="let category of skillCategories; let i = index" [style.animation-delay]="i * 0.1 + 's'">
+        <div class="category-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path [attr.d]="getIconPath(category.icon)"/>
+          </svg>
         </div>
-      </div>
-      
-      <!-- Core Skills -->
-      <div class="skill-category">
-        <h3>Core Skills</h3>
+        <h3 class="category-title">{{ category.title }}</h3>
+        <p class="category-description">{{ category.description }}</p>
+        
         <div class="skills-list">
-          <div class="skill-item" *ngFor="let skill of skills">
-            <div class="skill-info">
+          <div class="skill-item" *ngFor="let skill of category.skills">
+            <div class="skill-header">
               <span class="skill-name">{{ skill.name }}</span>
-              <span class="skill-percentage">{{ skill.level }}%</span>
+              <span class="skill-level">{{ skill.level }}%</span>
             </div>
-            <div class="skill-bar">
-              <div class="skill-progress" [style.width.%]="skill.level"></div>
+            <div class="skill-progress">
+              <div class="skill-progress-fill" [attr.data-level]="skill.level"></div>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Additional Skills -->
-      <div class="skill-category">
-        <h3>Additional Skills</h3>
-        <div class="tags-container">
-          <span class="skill-tag" *ngFor="let skill of otherSkills">{{ skill }}</span>
         </div>
       </div>
     </div>
