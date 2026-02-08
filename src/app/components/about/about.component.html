@@ -1,38 +1,58 @@
-<section id="about" class="section">
+<section id="about" class="section section--alt">
   <div class="container">
-    <h2 class="section-title">About Me</h2>
+    <div class="section-header">
+      <span class="section-label">Introduction</span>
+      <h2 class="section-title">About Me</h2>
+    </div>
+    
     <div class="about-content">
       <div class="about-text">
-        <h3>Passionate UI/UX Design Intern</h3>
-        <p>
-          I'm a dedicated design intern with a passion for creating user-centered digital experiences. 
-          My journey in UI/UX design began with a curiosity about how design can solve real-world problems 
-          and improve people's daily interactions with technology.
+        <p class="about-intro">
+          Hi! I'm <strong>Ashley Hermione Gomez</strong>, a passionate UI/UX Designer and Frontend Developer 
+          currently pursuing my Bachelor's degree in Information Technology at 
+          <strong>Polytechnic University of the Philippines - Taguig Campus</strong>.
         </p>
-        <p>
-          I believe great design is invisible – it should feel natural and intuitive. I'm always eager to 
-          learn new design methodologies, explore emerging trends, and collaborate with teams to bring 
-          innovative ideas to life.
+        
+        <p class="about-description">
+          I specialize in creating intuitive and visually appealing digital experiences. 
+          My approach combines thoughtful design with clean, efficient code to build 
+          solutions that are both beautiful and functional.
         </p>
+        
+        <p class="about-description">
+          With experience in full-stack development, mobile applications, and banking systems, 
+          I've worked on diverse projects that have strengthened my technical skills and 
+          collaborative abilities. I'm always eager to learn new technologies and take on 
+          challenging projects.
+        </p>
+        
         <div class="about-highlights">
           <div class="highlight-item">
-            <h4>🎨 Creative Problem Solving</h4>
-            <p>I love tackling complex design challenges with innovative solutions</p>
+            <div class="highlight-icon">🎓</div>
+            <div class="highlight-content">
+              <h3>Education</h3>
+              <p>3rd Year IT Student</p>
+              <span>PUP Taguig Campus</span>
+            </div>
           </div>
+          
           <div class="highlight-item">
-            <h4>👥 User-Centered Approach</h4>
-            <p>Every design decision is made with the user's needs and experience in mind</p>
+            <div class="highlight-icon">💼</div>
+            <div class="highlight-content">
+              <h3>Focus</h3>
+              <p>UI/UX Design & Frontend</p>
+              <span>Creating user-centered solutions</span>
+            </div>
           </div>
+          
           <div class="highlight-item">
-            <h4>📚 Continuous Learning</h4>
-            <p>Always exploring new tools, techniques, and design philosophies</p>
+            <div class="highlight-icon">🚀</div>
+            <div class="highlight-content">
+              <h3>Goal</h3>
+              <p>Seeking Internship</p>
+              <span>Ready to contribute and learn</span>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="about-stats">
-        <div class="stat-item" *ngFor="let stat of stats">
-          <div class="stat-value">{{ stat.value }}</div>
-          <div class="stat-label">{{ stat.label }}</div>
         </div>
       </div>
     </div>
