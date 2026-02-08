@@ -7,6 +7,7 @@ interface Project {
   tools: string[];
   link: string;
   role: string;
+  image: string | null;
   featured?: boolean;
 }
 
@@ -24,6 +25,7 @@ export class ProjectsComponent implements AfterViewInit {
       description: 'Campus Equipment & Facility Reservation System - A production-ready web application for digitizing resource management in academic institutions with real-time scheduling and automated notifications.',
       tools: ['Angular', 'TypeScript', 'Firebase'],
       link: 'https://github.com/PUP-BSIT/project-technova',
+      image: 'assets/CEFRS.png',
       featured: true
     },
     {
@@ -33,6 +35,7 @@ export class ProjectsComponent implements AfterViewInit {
       description: 'Banking system integrating multiple banks with real-time SMS notifications for fund transfers. Middleware platform connecting banking systems to SMS Gateway for transaction alerts.',
       tools: ['HTML', 'CSS', 'JavaScript'],
       link: 'https://github.com/PUP-BSIT/project-dragonfly',
+      image: 'assets/dragon_vault.png',
       featured: true
     },
     {
@@ -42,6 +45,7 @@ export class ProjectsComponent implements AfterViewInit {
       description: 'Smart Class Scheduler - Flutter application for educational institutions with class scheduling, QR code-based attendance tracking, and Google Calendar integration.',
       tools: ['Flutter', 'Dart', 'Firebase'],
       link: 'https://github.com/Day-Ones/EDUSYNC-DayOnes',
+      image: null,
       featured: true
     }
   ];
