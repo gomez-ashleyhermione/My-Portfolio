@@ -29,3 +29,35 @@
     <p class="footer-text">© 2026 Ashley Hermione C. Gomez</p>
   </div>
 </aside>
+
+<!-- Mobile Header -->
+<header class="mobile-header" [class.scrolled]="isScrolled">
+  <div class="mobile-header-content">
+    <div class="logo">
+      <span class="logo-text">Portfolio</span>
+    </div>
+    <button 
+      mat-icon-button 
+      class="hamburger-btn" 
+      (click)="toggleMobileMenu()"
+      [class.active]="isMobileMenuOpen">
+      <mat-icon>{{ isMobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()"></div>
+
+<!-- Mobile Menu -->
+<nav class="mobile-menu" [class.open]="isMobileMenuOpen">
+  <a 
+    *ngFor="let link of navLinks" 
+    [href]="'#' + link.id"
+    class="mobile-nav-item"
+    [class.active]="activeSection === link.id"
+    (click)="scrollToSection(link.id, $event)">
+    <mat-icon class="nav-icon">{{ link.icon }}</mat-icon>
+    <span class="nav-label">{{ link.label }}</span>
+  </a>
+</nav>

@@ -1,5 +1,5 @@
-<app-header></app-header>
-<main>
+<app-header #header></app-header>
+<main [class.sidebar-collapsed]="header.isCollapsed">
   <app-hero></app-hero>
   <app-about></app-about>
   <app-projects></app-projects>

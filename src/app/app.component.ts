@@ -5,13 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <app-header #header></app-header>
-    <main [class.sidebar-collapsed]="header.isCollapsed">
-      <router-outlet></router-outlet>
-    </main>
-    <app-footer></app-footer>
-  `,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
@@ -25,12 +19,13 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     setTimeout(() => {
       this.scrollAnimation.initScrollAnimations();
-      this.cursor.init();
+      // Cursor service disabled - using default cursor
+      // this.cursor.init();
     }, 100);
   }
 
   ngOnDestroy(): void {
     this.scrollAnimation.destroy();
-    this.cursor.destroy();
+    // this.cursor.destroy();
   }
 }

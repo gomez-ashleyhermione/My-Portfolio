@@ -37,8 +37,7 @@ export class SkillsComponent implements AfterViewInit {
       icon: 'tool',
       skills: [
         { name: 'Figma', level: 90 },
-        { name: 'Git', level: 85 },
-        { name: 'GitHub', level: 85 },
+        { name: 'Git & GitHub', level: 85 },
         { name: 'VS Code', level: 95 }
       ]
     }

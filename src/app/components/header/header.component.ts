@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit {
   isScrolled = false;
   activeSection = 'home';
   isCollapsed = false;
+  isMobile = false;
+  isMobileMenuOpen = false;
 
   navLinks: NavLink[] = [
     { id: 'home', label: 'Home', icon: 'home' },
@@ -26,6 +28,20 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateActiveSection();
+    this.checkScreenSize();
+  }
+
+  @HostListener('window:resize', [])
+  onResize(): void {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize(): void {
+    this.isMobile = window.innerWidth <= 768;
+    if (this.isMobile) {
+      this.isCollapsed = true;
+      this.isMobileMenuOpen = false;
+    }
   }
 
   @HostListener('window:scroll', [])
@@ -51,16 +67,26 @@ export class HeaderComponent implements OnInit {
     event.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 0;
+      // Adjust offset based on screen size
+      const offset = this.isMobile ? 60 : 0;
       const elementPosition = element.offsetTop - offset;
       window.scrollTo({
         top: elementPosition,
         behavior: 'smooth'
       });
+      
+      // Close mobile menu after navigation
+      if (this.isMobile) {
+        this.isMobileMenuOpen = false;
+      }
     }
   }
 
   toggleSidebar(): void {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 }

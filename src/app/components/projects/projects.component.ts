@@ -51,6 +51,17 @@ export class ProjectsComponent implements AfterViewInit {
       figmaLink: null,
       image: null,
       featured: true
+    },
+    {
+      title: 'NLCOM Inventory Management System',
+      category: 'Web App',
+      role: 'UI/UX Design & Frontend Developer',
+      description: 'Comprehensive inventory management system for NLCOM with real-time tracking, maintenance scheduling, and asset management capabilities.',
+      tools: ['Angular', 'Spring Boot', 'TypeScript', 'Bootstrap'],
+      link: 'https://github.com/Technova-x-NLCOM/Maintenance',
+      figmaLink: null,
+      image: 'assets/nlcom-inventory-management-system.png',
+      featured: true
     }
   ];
 
