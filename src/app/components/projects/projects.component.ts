@@ -39,7 +39,7 @@ export class ProjectsComponent implements AfterViewInit {
       link: 'https://github.com/PUP-BSIT/project-dragonfly',
       figmaLink: 'https://www.figma.com/design/cmMdduQ9nrQFW5MhwjUwye/Initial-Mockup?node-id=0-1&t=GRUidr7kOX3ax7Dx-1',
       image: 'assets/dragon_vault.png',
-      featured: true
+      featured: false
     },
     {
       title: 'EduSync',
@@ -50,7 +50,7 @@ export class ProjectsComponent implements AfterViewInit {
       link: 'https://github.com/Day-Ones/EDUSYNC-DayOnes',
       figmaLink: null,
       image: null,
-      featured: true
+      featured: false
     },
     {
       title: 'NLCOM Inventory Management System',
@@ -61,7 +61,7 @@ export class ProjectsComponent implements AfterViewInit {
       link: 'https://github.com/Technova-x-NLCOM/Maintenance',
       figmaLink: null,
       image: 'assets/nlcom-inventory-management-system.png',
-      featured: true
+      featured: false
     }
   ];
 
