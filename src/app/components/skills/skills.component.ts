@@ -20,7 +20,7 @@ interface SkillCategory {
 export class SkillsComponent implements AfterViewInit {
   skillCategories: SkillCategory[] = [
     {
-      title: 'Development',
+      title: 'Frontend',
       description: 'Building responsive and performant applications',
       icon: 'code',
       skills: [
