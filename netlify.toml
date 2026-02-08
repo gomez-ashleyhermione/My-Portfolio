@@ -9,11 +9,3 @@
 
 [build.environment]
   NODE_VERSION = "18"
-
-# Form notifications
-[[plugins]]
-  package = "@netlify/plugin-form-submissions"
-
-[plugins.inputs]
-  emailNotifications = true
-  emailAddress = "hermionegomez49@gmail.com"
