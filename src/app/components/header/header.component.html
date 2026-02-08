@@ -1,24 +1,22 @@
-<header class="header">
+<header class="header" [class.scrolled]="isScrolled">
   <div class="container">
-    <nav class="navbar">
-      <div class="navbar-brand">
-        <h2>Your Name</h2>
-        <span class="tagline">UI/UX Designer</span>
-      </div>
+    <nav class="nav">
+      <a href="#home" class="logo" (click)="scrollToSection('home', $event)">
+        <span class="logo-text">AG</span>
+        <span class="logo-dot"></span>
+      </a>
       
-      <div class="navbar-menu" [class.is-active]="isMenuOpen">
-        <a href="#" (click)="scrollToSection('home')" class="nav-link">Home</a>
-        <a href="#" (click)="scrollToSection('about')" class="nav-link">About</a>
-        <a href="#" (click)="scrollToSection('skills')" class="nav-link">Skills</a>
-        <a href="#" (click)="scrollToSection('projects')" class="nav-link">Projects</a>
-        <a href="#" (click)="scrollToSection('contact')" class="nav-link">Contact</a>
-      </div>
-      
-      <button class="mobile-menu-toggle" (click)="toggleMenu()" [class.is-active]="isMenuOpen">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <ul class="nav-links">
+        <li *ngFor="let link of navLinks">
+          <a 
+            [href]="'#' + link.id" 
+            [class.active]="activeSection === link.id"
+            (click)="scrollToSection(link.id, $event)">
+            {{ link.label }}
+            <span class="nav-indicator"></span>
+          </a>
+        </li>
+      </ul>
     </nav>
   </div>
 </header>
