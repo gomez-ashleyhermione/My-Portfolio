@@ -1,49 +1,56 @@
 <section id="projects" class="section">
   <div class="container">
-    <h2 class="section-title">My Projects</h2>
-    
-    <!-- Category Filter -->
-    <div class="filter-tabs">
-      <button 
-        *ngFor="let category of categories"
-        [class.active]="selectedCategory === category"
-        (click)="selectCategory(category)"
-        class="filter-btn"
-      >
-        {{ category }}
-      </button>
+    <div class="section-header reveal">
+      <span class="section-label">Portfolio</span>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">A selection of my recent work in UI/UX design and frontend development</p>
     </div>
     
-    <!-- Projects Grid -->
     <div class="projects-grid">
-      <div class="project-card" *ngFor="let project of filteredProjects">
+      <article class="project-card" *ngFor="let project of allProjects; let i = index">
+        <div class="project-number">0{{ i + 1 }}</div>
+        
         <div class="project-image">
           <div class="image-placeholder">
-            <span>{{ project.title }}</span>
-            <p>Add Project Screenshot</p>
+            <div class="placeholder-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <path d="M21 15l-5-5L5 21"/>
+              </svg>
+            </div>
           </div>
           <div class="project-overlay">
-            <a href="{{ project.link }}" class="btn btn-primary">View Project</a>
+            <a [href]="project.link" class="overlay-link" target="_blank">
+              View Project
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
           </div>
         </div>
         
-        <div class="project-info">
+        <div class="project-content">
           <div class="project-category">{{ project.category }}</div>
           <h3 class="project-title">{{ project.title }}</h3>
+          <div class="project-role">{{ project.role }}</div>
           <p class="project-description">{{ project.description }}</p>
           
-          <div class="project-tools">
-            <span class="tool-tag" *ngFor="let tool of project.tools">{{ tool }}</span>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="tag" *ngFor="let tool of project.tools">{{ tool }}</span>
+            </div>
+            
+            <a [href]="project.link" class="project-link" target="_blank">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
           </div>
         </div>
-      </div>
-    </div>
-    
-    <!-- Call to Action -->
-    <div class="projects-cta">
-      <h3>Interested in seeing more?</h3>
-      <p>I'm always working on new projects and learning new skills.</p>
-      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </article>
     </div>
   </div>
 </section>

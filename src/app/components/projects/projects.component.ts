@@ -1,57 +1,61 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+
+interface Project {
+  title: string;
+  category: string;
+  description: string;
+  tools: string[];
+  link: string;
+  role: string;
+  featured?: boolean;
+}
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent {
-  projects = [
+export class ProjectsComponent implements AfterViewInit {
+  allProjects: Project[] = [
     {
-      title: 'E-Commerce Mobile App',
-      description: 'A modern and intuitive mobile shopping experience with clean UI and smooth user flow.',
-      category: 'Mobile Design',
-      tools: ['Figma', 'Prototyping', 'User Research'],
-      image: 'project1-placeholder',
-      link: '#'
+      title: 'CEFRS',
+      category: 'Frontend',
+      role: 'UI/UX Design & Frontend Developer',
+      description: 'Campus Equipment & Facility Reservation System - A production-ready web application for digitizing resource management in academic institutions with real-time scheduling and automated notifications.',
+      tools: ['Angular', 'TypeScript', 'Firebase'],
+      link: 'https://github.com/PUP-BSIT/project-technova',
+      featured: true
     },
     {
-      title: 'Task Management Dashboard',
-      description: 'Web dashboard for project management with focus on usability and data visualization.',
-      category: 'Web Design',
-      tools: ['Adobe XD', 'Wireframing', 'Design System'],
-      image: 'project2-placeholder',
-      link: '#'
+      title: 'Dragon Vault',
+      category: 'Web App',
+      role: 'UI/UX Design & Frontend Developer',
+      description: 'Banking system integrating multiple banks with real-time SMS notifications for fund transfers. Middleware platform connecting banking systems to SMS Gateway for transaction alerts.',
+      tools: ['HTML', 'CSS', 'JavaScript'],
+      link: 'https://github.com/PUP-BSIT/project-dragonfly',
+      featured: true
     },
     {
-      title: 'Banking App Redesign',
-      description: 'Redesigned banking app interface focusing on accessibility and user trust.',
-      category: 'App Redesign',
-      tools: ['Sketch', 'User Testing', 'Accessibility'],
-      image: 'project3-placeholder',
-      link: '#'
-    },
-    {
-      title: 'Restaurant Website',
-      description: 'Modern restaurant website with online ordering system and responsive design.',
-      category: 'Web Design',
-      tools: ['Figma', 'Responsive Design', 'Branding'],
-      image: 'project4-placeholder',
-      link: '#'
+      title: 'EduSync',
+      category: 'UI/UX',
+      role: 'UI/UX Design & Frontend Developer',
+      description: 'Smart Class Scheduler - Flutter application for educational institutions with class scheduling, QR code-based attendance tracking, and Google Calendar integration.',
+      tools: ['Flutter', 'Dart', 'Firebase'],
+      link: 'https://github.com/Day-Ones/EDUSYNC-DayOnes',
+      featured: true
     }
   ];
-  
-  selectedCategory = 'All';
-  categories = ['All', 'Mobile Design', 'Web Design', 'App Redesign'];
-  
-  get filteredProjects() {
-    if (this.selectedCategory === 'All') {
-      return this.projects;
-    }
-    return this.projects.filter(project => project.category === this.selectedCategory);
+
+  ngAfterViewInit(): void {
+    setTimeout(() => this.initProjectAnimations(), 300);
   }
-  
-  selectCategory(category: string) {
-    this.selectedCategory = category;
+
+  private initProjectAnimations(): void {
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.classList.add('revealed');
+      }, index * 100);
+    });
   }
 }
