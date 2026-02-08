@@ -32,7 +32,6 @@
         </div>
         
         <div class="project-content">
-          <div class="project-category">{{ project.category }}</div>
           <h3 class="project-title">{{ project.title }}</h3>
           <div class="project-role">{{ project.role }}</div>
           <p class="project-description">{{ project.description }}</p>
@@ -42,13 +41,25 @@
               <span class="tag" *ngFor="let tool of project.tools">{{ tool }}</span>
             </div>
             
-            <a [href]="project.link" class="project-link" target="_blank">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                <polyline points="15 3 21 3 21 9"/>
-                <line x1="10" y1="14" x2="21" y2="3"/>
-              </svg>
-            </a>
+            <div class="project-links">
+              <a *ngIf="project.figmaLink" [href]="project.figmaLink" class="project-link" target="_blank" title="View Figma Design">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/>
+                  <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/>
+                  <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"/>
+                  <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"/>
+                  <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"/>
+                </svg>
+              </a>
+              
+              <a [href]="project.link" class="project-link" target="_blank" title="View GitHub Repository">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </article>

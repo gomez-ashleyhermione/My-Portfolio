@@ -1,22 +1,31 @@
-<header class="header" [class.scrolled]="isScrolled">
-  <div class="container">
-    <nav class="nav">
-      <a href="#home" class="logo" (click)="scrollToSection('home', $event)">
-        <span class="logo-text">AG</span>
-        <span class="logo-dot"></span>
-      </a>
-      
-      <ul class="nav-links">
-        <li *ngFor="let link of navLinks">
-          <a 
-            [href]="'#' + link.id" 
-            [class.active]="activeSection === link.id"
-            (click)="scrollToSection(link.id, $event)">
-            {{ link.label }}
-            <span class="nav-indicator"></span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+<aside class="sidebar" [class.collapsed]="isCollapsed">
+  <div class="sidebar-header">
+    <button 
+      mat-icon-button 
+      class="toggle-btn" 
+      (click)="toggleSidebar()"
+      [matTooltip]="isCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'"
+      matTooltipPosition="right">
+      <mat-icon>{{ isCollapsed ? 'menu' : 'menu_open' }}</mat-icon>
+    </button>
   </div>
-</header>
+  
+  <nav class="sidebar-nav">
+    <a 
+      *ngFor="let link of navLinks" 
+      [href]="'#' + link.id"
+      class="nav-item"
+      [class.active]="activeSection === link.id"
+      (click)="scrollToSection(link.id, $event)"
+      [matTooltip]="isCollapsed ? link.label : ''"
+      matTooltipPosition="right">
+      <mat-icon class="nav-icon">{{ link.icon }}</mat-icon>
+      <span class="nav-label" *ngIf="!isCollapsed">{{ link.label }}</span>
+      <span class="nav-indicator" *ngIf="activeSection === link.id"></span>
+    </a>
+  </nav>
+  
+  <div class="sidebar-footer" *ngIf="!isCollapsed">
+    <p class="footer-text">© 2026 Ashley Hermione C. Gomez</p>
+  </div>
+</aside>

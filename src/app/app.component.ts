@@ -1,12 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ScrollAnimationService } from './services/scroll-animation.service';
 import { CursorService } from './services/cursor.service';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
   template: `
-    <app-header></app-header>
-    <router-outlet></router-outlet>
+    <app-header #header></app-header>
+    <main [class.sidebar-collapsed]="header.isCollapsed">
+      <router-outlet></router-outlet>
+    </main>
     <app-footer></app-footer>
   `,
   styleUrls: ['./app.component.scss']

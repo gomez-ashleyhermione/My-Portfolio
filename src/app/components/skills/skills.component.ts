@@ -20,15 +20,6 @@ interface SkillCategory {
 export class SkillsComponent implements AfterViewInit {
   skillCategories: SkillCategory[] = [
     {
-      title: 'Design',
-      description: 'Creating beautiful and functional interfaces',
-      icon: 'layers',
-      skills: [
-        { name: 'Figma', level: 90 },
-        { name: 'Prototyping', level: 90 }
-      ]
-    },
-    {
       title: 'Development',
       description: 'Building responsive and performant applications',
       icon: 'code',
@@ -45,6 +36,7 @@ export class SkillsComponent implements AfterViewInit {
       description: 'Essential tools for modern development',
       icon: 'tool',
       skills: [
+        { name: 'Figma', level: 90 },
         { name: 'Git', level: 85 },
         { name: 'GitHub', level: 85 },
         { name: 'VS Code', level: 95 }

@@ -1,5 +1,11 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 
+interface NavLink {
+  id: string;
+  label: string;
+  icon: string;
+}
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,13 +14,14 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   isScrolled = false;
   activeSection = 'home';
+  isCollapsed = false;
 
-  navLinks = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'contact', label: 'Contact' }
+  navLinks: NavLink[] = [
+    { id: 'home', label: 'Home', icon: 'home' },
+    { id: 'about', label: 'About', icon: 'person' },
+    { id: 'projects', label: 'Projects', icon: 'work' },
+    { id: 'skills', label: 'Skills', icon: 'code' },
+    { id: 'contact', label: 'Contact', icon: 'mail' }
   ];
 
   ngOnInit(): void {
@@ -44,12 +51,16 @@ export class HeaderComponent implements OnInit {
     event.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80;
+      const offset = 0;
       const elementPosition = element.offsetTop - offset;
       window.scrollTo({
         top: elementPosition,
         behavior: 'smooth'
       });
     }
+  }
+
+  toggleSidebar(): void {
+    this.isCollapsed = !this.isCollapsed;
   }
 }
