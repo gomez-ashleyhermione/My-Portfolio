@@ -21,7 +21,7 @@ export class SkillsComponent implements AfterViewInit {
   skillCategories: SkillCategory[] = [
     {
       title: 'Frontend',
-      description: 'Building responsive and performant applications',
+      description: '',
       icon: 'code',
       skills: [
         { name: 'HTML/CSS', level: 95 },
@@ -33,7 +33,7 @@ export class SkillsComponent implements AfterViewInit {
     },
     {
       title: 'Tools',
-      description: 'Essential tools for modern development',
+      description: '',
       icon: 'tool',
       skills: [
         { name: 'Figma', level: 90 },
