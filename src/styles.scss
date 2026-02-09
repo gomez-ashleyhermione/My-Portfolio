@@ -44,39 +44,43 @@
 }
 
 :root {
-  /* Formal Professional Color Palette */
-  --primary-color: #1A1A2E;
-  --secondary-color: #16213E;
-  --accent-primary: #2E5EAA;
-  --accent-secondary: #4A7BA7;
+  /* Calming Purple-Teal Color Palette */
+  --primary-color: #080138;
+  --secondary-color: #361958;
+  --accent-primary: #522377;
+  --accent-secondary: #254D70;
+  --accent-teal: #133155;
   
-  /* Clean Text Colors */
-  --text-primary: #1A1A2E;
-  --text-secondary: #4A5568;
-  --text-tertiary: #718096;
-  --text-muted: #A0AEC0;
+  /* Soft Text Colors - Easy on Eyes */
+  --text-primary: #E8E4F3;
+  --text-secondary: #B8B0D4;
+  --text-tertiary: #9088B8;
+  --text-muted: #7068A0;
   
-  /* Clean Backgrounds */
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F7FAFC;
-  --bg-tertiary: #EDF2F7;
-  --bg-accent: #F0F4F8;
+  /* Calming Purple-Teal Backgrounds */
+  --bg-primary: #0F0A1E;
+  --bg-secondary: #1A1230;
+  --bg-tertiary: #251B3D;
+  --bg-accent: #2D2148;
+  --bg-card: #1E1638;
+  --bg-card-hover: #2A2050;
   
-  /* Formal Gradients */
-  --gradient-primary: linear-gradient(135deg, #2E5EAA 0%, #4A7BA7 100%);
-  --gradient-secondary: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+  /* Soothing Gradients */
+  --gradient-primary: linear-gradient(135deg, #522377 0%, #254D70 100%);
+  --gradient-secondary: linear-gradient(135deg, #361958 0%, #133155 100%);
+  --gradient-accent: linear-gradient(135deg, #522377 0%, #361958 50%, #254D70 100%);
   
-  /* Clean Borders */
-  --border-primary: #E2E8F0;
-  --border-secondary: #CBD5E1;
-  --border-accent: #2E5EAA;
+  /* Soft Borders */
+  --border-primary: #3A2F5A;
+  --border-secondary: #4A3F6A;
+  --border-accent: #522377;
   
-  /* Professional Shadows */
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.12);
-  --shadow-accent: 0 4px 12px rgba(46, 94, 170, 0.15);
+  /* Gentle Shadows */
+  --shadow-sm: 0 1px 3px 0 rgba(82, 35, 119, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(82, 35, 119, 0.12);
+  --shadow-lg: 0 10px 15px -3px rgba(82, 35, 119, 0.15);
+  --shadow-xl: 0 20px 25px -5px rgba(82, 35, 119, 0.18);
+  --shadow-accent: 0 4px 12px rgba(82, 35, 119, 0.2);
   
   /* Border Radius */
   --radius-sm: 4px;
@@ -136,7 +140,7 @@ body {
 
 
 ::selection {
-  background: rgba(46, 94, 170, 0.15);
+  background: rgba(82, 35, 119, 0.2);
   color: var(--text-primary);
 }
 
@@ -146,16 +150,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-secondary);
+  background: var(--accent-teal);
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-primary);
+  background: var(--accent-secondary);
 }
 
 /* Container */
@@ -236,13 +240,13 @@ body {
   }
   
   &--secondary {
-    background: var(--bg-secondary);
+    background: var(--bg-card);
     color: var(--text-primary);
     border: 1px solid var(--border-primary);
     
     &:hover {
-      background: var(--bg-tertiary);
-      border-color: var(--border-secondary);
+      background: var(--bg-card-hover);
+      border-color: var(--accent-primary);
     }
   }
   
@@ -262,7 +266,7 @@ body {
     color: var(--text-secondary);
     
     &:hover {
-      background: var(--bg-secondary);
+      background: var(--bg-card);
       color: var(--text-primary);
     }
   }
@@ -275,7 +279,7 @@ body {
 
 /* Card */
 .card {
-  background: var(--bg-primary);
+  background: var(--bg-card);
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
@@ -283,9 +287,10 @@ body {
   border: 1px solid var(--border-primary);
   
   &:hover {
+    background: var(--bg-card-hover);
     box-shadow: var(--shadow-lg);
     transform: translateY(-4px);
-    border-color: var(--border-secondary);
+    border-color: var(--accent-primary);
   }
 }
 
@@ -540,7 +545,7 @@ body {
   
   /* Prevent text selection on interactive elements */
   .btn, button, .nav-item {
-    -webkit-tap-highlight-color: rgba(46, 94, 170, 0.1);
+    -webkit-tap-highlight-color: rgba(82, 35, 119, 0.15);
     user-select: none;
   }
   
